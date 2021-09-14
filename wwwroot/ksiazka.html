@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+    <title>Lista książek</title>
+
+    <style>
+        input[type='submit'], button, [aria-label] {
+            cursor: pointer;
+        }
+
+        #spoiler {
+            display: none;
+        }
+
+        table {
+            font-family: Arial, sans-serif;
+            border: 1px solid;
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: #0066CC;
+            color: white;
+        }
+
+        td {
+            border: 1px solid;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <ul>
+                <li>
+                    <a href="osoba.html">Lista osób</a>
+                </li>
+                <li>
+                    <a href="ksiazka.html">Lista książek</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <h1> Lista książek</h1>
+
+    <div>
+        <form action="javascript:void(0);" method="POST" onsubmit="addItem()">
+            Tytuł:
+            <input type="text" id="add-bookname" placeholder="">
+            <br /><br />
+            Autor:
+            <input type="text" id="add-author" placeholder="">
+            <input type="submit" value="Wyślij">
+        </form>
+        <br />
+        <div id="spoiler">
+            <h3>Edytuj</h3>
+            <form action="javascript:void(0);" method="POST" onsubmit="updateItem()">
+                <input type="hidden" id="edit-id">
+                <input type="text" id="edit-bookname">
+                <input type="text" id="edit-author">
+                <input type="submit" value="Zapisz">
+            </form>
+        </div>
+        <p id="counter"> </p>
+        <table>
+            <tr>
+                <th>Tytuł</th>
+                <th>Autor</th>
+            </tr>
+            <tbody id="Ksiazka"> </tbody>
+        </table>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+                crossorigin="anonymous"></script>
+        <script src="ksiazka.js"></script>
+    </div>
+</body>
+</html>
